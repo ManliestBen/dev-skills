@@ -1,12 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var skillDb = require('../models/skill')
+var skillsCtrl = require('../controllers/skills')
 
-router.get('/', function(req, res) {
-    res.render('skills/index', {
-        skills: skillDb.getAll()
-    })
-
-});
+router.get('/', skillsCtrl.index);
 
 module.exports = router;
